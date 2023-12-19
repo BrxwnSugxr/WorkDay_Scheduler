@@ -11,9 +11,12 @@ $(function () {
 
   // Step1: Add a click event listener for the save button
   $('.saveBtn').on('click', function () {
-    //step2:
+    //step2: use $(this) to reference the click save button
     var text = $(this).siblings('.description').val();
-    // step3:
+    // step3: use DOM to get hour
+    var time = $(this).parent().attr('id');
+    //step 4: save user input in local storage
+    localStorage.setItem(time, text);
   });
 
   //
