@@ -2,4 +2,5 @@
 var timeBlockContainer = document.getElementById('timeBlocksContainer');
 // step 2: creating the hours
 var workingHours = Array.from({length:9}, (_,index)=> index +9);
+// step 3: looping through the hours
 
