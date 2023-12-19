@@ -24,11 +24,21 @@ for (var i = 0; i < workingHours.length; i++) {
   saveBtn.classList.add('btn', 'saveBtn', 'col-2', 'col-md-1');
   saveBtn.setAttribute('aria-label', 'save');
   saveBtn.innerHTML = '<i class="fas fa-save" aria-hidden="true"></i>';
+
   //   appending elelements to the time blokc
   timeBlock.appendChild(hourDisplay);
   timeBlock.appendChild(textarea);
   timeBlock.appendChild(saveBtn);
 
   //   append time block to container
-  timeBlockContainer.appendChild(timeBlock);
+  timeBlocksContainer.appendChild(timeBlock);
 }
+
+// Function to handle click events on the save button
+timeBlocksContainer.addEventListener('click', function (event) {
+  if (event.target.classList.contains('saveBtn')) {
+    var text = event.target.parentElement.querySelector('.description').value;
+    var time = event.target.parentElement.id;
+    localStorage.setItem(time, text);
+  }
+});
