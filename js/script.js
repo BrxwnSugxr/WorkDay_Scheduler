@@ -27,14 +27,17 @@ $(function () {
   // current hour in 24-hour time?
 
   // step 5:
-function updateBlockClasses(){
-  // step 6:
-  var currentHour = dayjs().hour();
-  // step 7:
-  $(".time-block").each(function (){
+  function updateBlockClasses() {
+    // step 6:
+    var currentHour = dayjs().hour();
+    // step 7:
+    $('.time-block').each(function () {});
+  }
 
-  })
-}
+  // step 8:
+  updateBlockClasses();
+  // step 9:
+  setInterval(updateBlockClasses, 10000);
 
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
