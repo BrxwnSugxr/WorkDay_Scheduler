@@ -31,7 +31,18 @@ $(function () {
     // step 6:
     var currentHour = dayjs().hour();
     // step 7:
-    $('.time-block').each(function () {});
+    $('.time-block').each(function () {
+      var blockHour = parseInt($(this).attr('id').split('-')[1]);
+      if (blockHour < currentHour) {
+        $(this).addClass('past');
+      } else if (blockHour === currentHour) {
+        $(this).removeClass('past');
+        $(this).removeClass('present');
+      } else {
+        $(this).removeClass('past Present');
+        $(this).addClass('future');
+      }
+    });
   }
 
   // step 8:
