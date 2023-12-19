@@ -39,7 +39,7 @@ $(function () {
         $(this).removeClass('past');
         $(this).addClass('present');
       } else {
-        $(this).removeClass('past Present');
+        $(this).removeClass('past present');
         $(this).addClass('future');
       }
     });
@@ -48,7 +48,7 @@ $(function () {
   // step 8:
   updateBlockClasses();
   // step 9:
-  setInterval(updateBlockClasses, 10000);
+  setInterval(updateBlockClasses, 60000);
 
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
@@ -70,5 +70,5 @@ $(function () {
   displayText();
 
   // TODO: Add code to display the current date in the header of the page.
-  $('#currentDay').text(dayjs().format('dddd,MMMM D, YYYY'));
+  $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
 });
