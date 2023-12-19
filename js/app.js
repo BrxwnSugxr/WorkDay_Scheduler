@@ -1,17 +1,24 @@
 // step 1: container element id "timeBlockContainer"
-var timeBlockContainer = document.getElementById('timeBlocksContainer');
+var timeBlocksContainer = document.getElementById('timeBlocksContainer');
+
 // step 2: creating the hours
 var workingHours = Array.from({ length: 9 }, (_, index) => index + 9);
+
 // step 3: looping through the hours
 for (var i = 0; i < workingHours.length; i++) {
   // create a time with div
   var timeBlock = document.createElement('div');
   timeBlock.id = 'hour-' + workingHours[i];
   timeBlock.classList.add('row', 'time-block');
-  //   create the textarea for user input
+  // hour display
   var hourDisplay = document.createElement('div');
   hourDisplay.classList.add('col-2', 'col-md-1', 'hour', 'text-center', 'py-3');
   hourDisplay.textContent = workingHours[i] + 'AM';
+  //   create the textarea for user input
+  var textarea = document.createElement('textarea');
+  textarea.classList.add('col-8', 'col-md-10', 'description');
+  textarea.rows = 3;
+
   //   save bttn
   var saveBtn = document.createElement('button');
   saveBtn.classList.add('btn', 'saveBtn', 'col-2', 'col-md-1');
