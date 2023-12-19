@@ -12,5 +12,16 @@ for (var i = 0; i < workingHours.length; i++) {
   var textarea = document.createElement('div');
   hourDisplay.classList.add('col-2', 'col-md-1', 'hour', 'text-center', 'py-3');
   hourDisplay.textContent = workingHours[i] + 'AM';
-  
+  //   save bttn
+  var saveBtn = document.createElement('button');
+  saveBtn.classList.add('btn', 'saveBtn', 'col-2', 'col-md-1');
+  saveBtn.setAttribute('aria-lavel', 'save');
+  saveBtn.innerHTML = '<i class="fas fa-save" aria-hidden="true"></i>';
+  //   appending elelements to the time blokc
+  timeBlock.appendChild(hourDisplay);
+  timeBlock.appendChild(textarea);
+  timeBlock.appendChild(saveBtn);
+
+  //   append time block to container
+  timeBlockContainer.appendChild(timeBlock);
 }
