@@ -37,7 +37,7 @@ $(function () {
         $(this).addClass('past');
       } else if (blockHour === currentHour) {
         $(this).removeClass('past');
-        $(this).removeClass('present');
+        $(this).addClass('present');
       } else {
         $(this).removeClass('past Present');
         $(this).addClass('future');
