@@ -56,15 +56,18 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // step 10: function on displaying event
-  function displayText(){
-    // step 11: Loop over 
-    $(".time-block").each(function (){
-      
-      var blockHour = $(this).attr("id");
-    })
+  function displayText() {
+    // step 11: Loop over
+    $('.time-block').each(function () {
+      // step 12: getting the ID of timeblock
+      var blockHour = $(this).attr('id');
+      // step 13: set textarea of corresponding local stoartage
+      $(this).children('.description').val(localStorage.getItem(blockHour));
+    });
   }
 
- 
+  // setp 14:  call function
+  displayText();
 
   // TODO: Add code to display the current date in the header of the page.
 });
