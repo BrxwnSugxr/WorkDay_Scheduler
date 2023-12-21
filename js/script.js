@@ -51,6 +51,16 @@ function printSavedSched() {
   }
 }
 
+// timer
+function setCurrentDateTime() {
+  var currentDateTime = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+  $('#currentDay').text(currentDateTime);
+}
+
+setCurrentDateTime();
+
+setInterval(setCurrentDateTime, 1000);
+
 timeBlockEl.on('click', '.btn', function (event) {
   const timeBlock = $(event.target).data('time');
   const currDate = moment().format('MM-DD-YYYY');
