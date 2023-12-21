@@ -6,6 +6,10 @@ A simple calendar application that allows a user to save events for each hour of
 
 This is a simple calendar application (utilizing JQuery and Local Storage) that allows a user to save events for each hour of the day. HTML and CSS are dynamically updated according to the time--the background colors of the time blocks are adjusted based upon the classification of the time event (past, present, or future.) The user inputs calendar items into the text area, and clicking the save buttons sets the items into local storage. The added calendar items persist on the page after refresh.
 
+## Demo
+
+Visit [this](https://brxwnsugxr.github.io/WorkDay_Scheduler/) to see the webapp in action.
+
 ## User Story
 
 ```md
@@ -74,10 +78,6 @@ URL to deployed application:
 URL to GitHub repository:
 
 For any questions, please contact me at jsdev.mas@gmail.com
-
-## Demo
-
-Visit [this](https://brxwnsugxr.github.io/WorkDay_Scheduler/) to see the webapp in action.
 
 ## License
 
