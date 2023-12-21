@@ -75,6 +75,10 @@ URL to GitHub repository:
 
 For any questions, please contact me at jsdev.mas@gmail.com
 
+## Demo
+
+Visit [this](https://brxwnsugxr.github.io/WorkDay_Scheduler/) to see the webapp in action.
+
 ## License
 
 MIT License
