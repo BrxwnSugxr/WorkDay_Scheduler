@@ -67,7 +67,7 @@ The following animation demonstrates the application functionality:
 Below are images of the user interface of the calendar as displayed to the user:
 
 ![A user clicks on slots on the color-coded calendar and edits the events.](./img/Work%20Day%20Scheduler.gif)
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/workday_scheduler_screenshot2.png)
+![A user clicks on slots on the color-coded calendar and edits the events.](./img/workday_scheduler_screenshot2.png)
 
 URL to deployed application:
 
