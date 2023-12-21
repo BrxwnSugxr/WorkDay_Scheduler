@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
@@ -23,124 +23,291 @@
   </head>
 
   <body>
-    <header class="p-5 mb-4 border-5 border-bottom border-dark text-center">
+    <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container-lg px-5">
-      <!-- Use class for "past", "present", and "future" to apply styles to the
-        time-block divs accordingly. The javascript will need to do this by
-        adding/removing these classes on each div by comparing the hour in the
-        id to the current hour. The html provided below is meant to be an example
-        demonstrating how the css provided can be leveraged to create the
-        desired layout and colors. The html below should be removed or updated
-        in the finished product. Remember to delete this comment once the
-        code is implemented.
-        -->
+    <div class="container mb-4">
+      <!-- Added alert to notify user that entry is saved but initially set display to none -->
+      <div class="alert alert-info text-center d-none" role="alert">
+        Schedule saved to LocalStorage &#10024;
+      </div>
+      <!-- use form-row for each timeslot: 1/12 label, 10/12 event, 1/12 save button -->
+      <!-- repeat this form for every timeblock -->
+      <form class="timeblock">
+        <div class="form-row p-2 border-top justify-content-around">
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="8AM">8AM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <!-- remove the border of the textarea -->
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="8AM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="8AM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="9AM">9AM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="9AM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="9AM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="10AM">10AM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="10AM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="10AM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="11AM">11AM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="11AM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="11AM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="12PM">12PM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="12PM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="12PM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="1PM">1PM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="1PM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="1PM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="2PM">2PM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="2PM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="2PM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="3PM">3PM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="3PM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="3PM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="4PM">4PM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="4PM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="4PM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <form class="timeblock">
+        <div
+          class="form-row p-2 border-top border-bottom justify-content-around justify-content-center"
+        >
+          <div
+            class="col-1 col-form-label d-flex align-items-center justify-content-center"
+          >
+            <label for="5PM">5PM</label>
+          </div>
+          <div class="col-9 col-md-9 col-lg-10">
+            <textarea
+              class="form-control border-0 text-break text-light"
+              id="5PM"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-1 d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-lg"
+              data-time="5PM"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-      <!-- Example of a past time block. The "past" class adds a gray background color. -->
-      <!-- <div id="timeBlocksContainer" class="container-lg px-5">
-        </div> -->
-
-       
-      
-            <!-- List of time-blocks -->
-            <div id="hour-8" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">8AM</div>
-              <textarea id="8am-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-9" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-              <textarea id="9am-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-10" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
-              <textarea id="10am-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-11" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">11AM</div>
-              <textarea id="11am-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-12" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">12PM</div>
-              <textarea id="12pm-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-13" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">1PM</div>
-              <textarea id="1pm-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-14" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">2PM</div>
-              <textarea id="2pm-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-15" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">3PM</div>
-              <textarea id="3pm-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-16" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">4PM</div>
-              <textarea id="4pm-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-17" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">5PM</div>
-              <textarea id="5pm-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-      
-            <div id="hour-18" class="row time-block">
-              <div class="col-2 col-md-1 hour text-center py-3">6PM</div>
-              <textarea id="6pm-text" class="col-8 col-md-10 description" rows="3"> </textarea>
-              <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </button>
-            </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
-<!-- <script src="./js/app.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
